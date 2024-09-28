@@ -32,3 +32,6 @@
 *.out
 *.app
 
+x64/
+Lab_1 3_sem/
+*.sln

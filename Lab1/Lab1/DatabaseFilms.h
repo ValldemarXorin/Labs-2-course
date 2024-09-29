@@ -18,6 +18,8 @@ public:
 
 	DatabaseFilms(const DatabaseFilms& other) = delete;
 
+	const DatabaseFilms& operator=(const DatabaseFilms& other) = delete;
+
 	~DatabaseFilms() {
 		delete database;
 	}

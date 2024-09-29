@@ -9,16 +9,15 @@ using std::endl;
 using std::string;
 
 
-
 class MyList {
 private:
 	struct Node {
-		Film* film;
-		Node* next;
+		std::shared_ptr <Film> film;
+		std::shared_ptr <Node> next;
 		Node(const string& new_value) : film(new Film(new_value)), next(nullptr) {}
 	};
-	Node* first;
-	Node* last;
+	std::shared_ptr <Node> first;
+	std::shared_ptr <Node> last;
 
 public:
 	MyList() : first(nullptr), last(nullptr) {}
@@ -34,7 +33,7 @@ public:
 	}
 
 	void push_back(const string& value) {
-		Node* new_node = new Node(value);
+		std::shared_ptr <Node> new_node (new Node(value));
 		if (is_empty()) {
 			first = new_node;
 			last = new_node;
@@ -47,17 +46,17 @@ public:
 	void print_list() {
 		if (is_empty())
 			return;
-		Node* current_node = first;
+		std::shared_ptr <Node> current_node = first;
 		while (current_node) {
 			cout << "Name: " << current_node->film->get_name() << endl;
 			current_node = current_node->next;
 		}
 	}
 
-	Node* search_node(const string& value) {
+	std::shared_ptr <Node> search_node(const string& value) {
 		if (is_empty())
 			return nullptr;
-		Node* current_node = first;
+		std::shared_ptr <Node> current_node = first;
 		while (current_node && current_node->film->get_name() != value)
 			current_node = current_node->next;
 		return (current_node && current_node->film->get_name() == value) ? current_node : nullptr;
@@ -67,9 +66,8 @@ private:
 	void remove_first() {
 		if (is_empty())
 			return;
-		Node* temp = first;
+		std::shared_ptr <Node> temp = first;
 		first = first->next;
-		delete temp;
 	}
 
 	void remove_last() {
@@ -79,11 +77,10 @@ private:
 			remove_first();
 			return;
 		}
-		Node* temp = first;
+		std::shared_ptr <Node> temp = first;
 		while (temp->next != last)
 			temp = temp->next;
 		temp->next = nullptr;
-		delete last;
 		last = temp;
 	}
 
@@ -99,8 +96,8 @@ public:
 			remove_last();
 			return;
 		}
-		Node* slow = first;
-		Node* fast = first->next;
+		std::shared_ptr <Node> slow = first;
+		std::shared_ptr <Node> fast = first->next;
 		while (fast && fast->film->get_name() != value) {
 			fast = fast->next;
 			slow = slow->next;
@@ -110,6 +107,5 @@ public:
 			return;
 		}
 		slow->next = fast->next;
-		delete fast;
 	}
 };

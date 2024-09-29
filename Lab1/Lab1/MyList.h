@@ -14,7 +14,7 @@ private:
 	struct Node {
 		std::shared_ptr <Film> film;
 		std::shared_ptr <Node> next;
-		Node(const string& new_value) : film(new Film(new_value)), next(nullptr) {}
+		explicit Node(const string& new_value) : film(new Film(new_value)), next(nullptr) {}
 	};
 	std::shared_ptr <Node> first;
 	std::shared_ptr <Node> last;

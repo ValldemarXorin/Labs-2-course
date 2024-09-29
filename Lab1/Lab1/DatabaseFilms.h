@@ -14,7 +14,7 @@ private:
 	std::shared_ptr<MyList> database = (std::shared_ptr <MyList>)new MyList;
 	bool cont = true;
 public:
-	DatabaseFilms() : database(new MyList) {}
+	DatabaseFilms() = default;
 
 	DatabaseFilms(const DatabaseFilms& other) = delete;
 

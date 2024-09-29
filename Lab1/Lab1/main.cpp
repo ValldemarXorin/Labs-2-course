@@ -31,6 +31,8 @@ int main() {
 		case 4:
 			my_films->delete_film();
 			break;
+		default:
+			cout << "This is not a function";
 		}
 		cout << "Do you want continue? If yes, enter 1, else 0" << endl;
 		cin >> exit;

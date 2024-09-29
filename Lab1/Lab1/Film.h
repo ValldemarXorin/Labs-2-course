@@ -18,7 +18,7 @@ public:
 		name = new_name;
 	}
 
-	string get_name() {
+	string get_name() const {
 		return name;
 	}
 };

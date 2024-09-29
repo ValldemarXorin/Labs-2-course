@@ -13,14 +13,14 @@ class MyList {
 private:
 	struct Node {
 		std::shared_ptr <Film> film;
-		std::shared_ptr <Node> next;
-		explicit Node(const string& new_value) : film(new Film(new_value)), next(nullptr) {}
+		std::shared_ptr <Node> next = nullptr;
+		explicit Node(const string& new_value) : film(new Film(new_value)) {}
 	};
-	std::shared_ptr <Node> first;
-	std::shared_ptr <Node> last;
+	std::shared_ptr <Node> first = nullptr;
+	std::shared_ptr <Node> last = nullptr;
 
 public:
-	explicit MyList() : first(nullptr), last(nullptr) {}
+	explicit MyList() = default;
 
 	MyList(const MyList& other) = delete;
 

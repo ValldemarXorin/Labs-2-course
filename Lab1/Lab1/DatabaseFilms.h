@@ -11,7 +11,7 @@ using std::string;
 
 class DatabaseFilms {
 private:
-	MyList* database;
+	std::unique_ptr<MyList> database;
 	bool cont;
 public:
 	DatabaseFilms() : database(new MyList), cont(true) {}
@@ -19,10 +19,6 @@ public:
 	DatabaseFilms(const DatabaseFilms& other) = delete;
 
 	const DatabaseFilms& operator=(const DatabaseFilms& other) = delete;
-
-	~DatabaseFilms() {
-		delete database;
-	}
 
 	void create_film() {
 		cont = true;

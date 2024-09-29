@@ -39,7 +39,7 @@ public:
 
 	void update_film() {
 		cont = true;
-		string new_name, old_name;
+		string new_name = "", old_name = "";
 		while (cont) {
 			cout << "Enter film name:" << endl;
 			rewind(stdin);

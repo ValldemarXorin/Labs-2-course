@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <string_view>
 
 using std::cin;
 using std::cout;

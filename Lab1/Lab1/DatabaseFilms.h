@@ -11,10 +11,10 @@ using std::string;
 
 class DatabaseFilms {
 private:
-	std::unique_ptr<MyList> database;
-	bool cont;
+	std::shared_ptr<MyList> database = (std::shared_ptr <MyList>)new MyList;
+	bool cont = true;
 public:
-	DatabaseFilms() : database(new MyList), cont(true) {}
+	DatabaseFilms() : database(new MyList) {}
 
 	DatabaseFilms(const DatabaseFilms& other) = delete;
 

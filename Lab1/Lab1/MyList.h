@@ -20,7 +20,11 @@ private:
 	std::shared_ptr <Node> last;
 
 public:
-	MyList() : first(nullptr), last(nullptr) {}
+	explicit MyList() : first(nullptr), last(nullptr) {}
+
+	MyList(const MyList& other) = delete;
+
+	const MyList& operator=(const MyList& other) = delete;
 
 	~MyList() {
 		while (first) {

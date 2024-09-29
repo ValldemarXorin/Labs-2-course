@@ -14,7 +14,7 @@ using std::string;
 int main() {
 	bool exit = true;
 	int choose;
-	DatabaseFilms* my_films = new DatabaseFilms;
+	std::unique_ptr <DatabaseFilms> my_films(new DatabaseFilms);
 	while (exit) {
 		cout << "Choose function:\n1. Add film\n2. Check films list\n3. Update film\n4. Delete film" << endl;
 		cin >> choose;
@@ -35,6 +35,5 @@ int main() {
 		cout << "Do you want continue? If yes, enter 1, else 0" << endl;
 		cin >> exit;
 	}
-	delete my_films;
 	return 0;
 }

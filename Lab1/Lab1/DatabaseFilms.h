@@ -16,6 +16,8 @@ private:
 public:
 	DatabaseFilms() : database(new MyList), cont(true) {}
 
+	DatabaseFilms(const DatabaseFilms& other) = default;
+
 	~DatabaseFilms() {
 		delete database;
 	}

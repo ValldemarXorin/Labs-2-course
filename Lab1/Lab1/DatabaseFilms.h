@@ -11,7 +11,7 @@ using std::string;
 
 class DatabaseFilms {
 private:
-	std::shared_ptr<MyList> database = (std::shared_ptr <MyList>)new MyList;
+	std::shared_ptr<MyList> database {std::make_shared<MyList>};
 	bool cont = true;
 public:
 	DatabaseFilms() = default;
@@ -39,7 +39,7 @@ public:
 
 	void update_film() {
 		cont = true;
-		string new_name = "", old_name = "";
+		string new_name, old_name;
 		while (cont) {
 			cout << "Enter film name:" << endl;
 			rewind(stdin);

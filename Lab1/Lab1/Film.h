@@ -15,7 +15,7 @@ private:
 public:
 	explicit Film(const string& enter_name) : name(enter_name) {}
 
-	void set_name(const string& new_name) {
+	void set_name(std::string_view new_name) {
 		name = new_name;
 	}
 

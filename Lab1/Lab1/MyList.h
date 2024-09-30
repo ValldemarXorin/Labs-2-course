@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <string>
+#include <string_view>
 #include "Film.h"
 
 using std::cin;
@@ -57,7 +57,7 @@ public:
 		}
 	}
 
-	std::shared_ptr <Node> search_node(const string& value) {
+	std::shared_ptr <Node> search_node(std::string_view value) {
 		if (is_empty())
 			return nullptr;
 		std::shared_ptr <Node> current_node = first;
@@ -89,7 +89,7 @@ private:
 	}
 
 public:
-	void remove_node(const string& value) {
+	void remove_node(std::string_view value) {
 		if (is_empty())
 			return;
 		if (first->film->get_name() == value) {

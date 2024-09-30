@@ -14,7 +14,7 @@ using std::string;
 int main() {
 	bool exit = true;
 	int choose;
-	std::unique_ptr <DatabaseFilms> my_films(new DatabaseFilms);
+	std::shared_ptr<DatabaseFilms> my_films = std::make_shared<DatabaseFilms>();
 	while (exit) {
 		cout << "Choose function:\n1. Add film\n2. Check films list\n3. Update film\n4. Delete film" << endl;
 		cin >> choose;

@@ -11,7 +11,7 @@ using std::string;
 
 class DatabaseFilms {
 private:
-	std::shared_ptr<MyList> database {std::make_shared<MyList>};
+	std::shared_ptr <MyList> database = std::make_shared<MyList>();
 	bool cont = true;
 public:
 	DatabaseFilms() = default;

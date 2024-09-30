@@ -37,7 +37,7 @@ public:
 	}
 
 	void push_back(const string& value) {
-		std::shared_ptr <Node> new_node (new Node(value));
+		std::shared_ptr <Node> new_node = std::make_shared<Node>();
 		if (is_empty()) {
 			first = new_node;
 			last = new_node;

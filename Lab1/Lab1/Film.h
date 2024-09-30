@@ -13,6 +13,8 @@ private:
 	string name;
 
 public:
+	Film() = default;
+
 	explicit Film(const string& enter_name) : name(enter_name) {}
 
 	void set_name(std::string_view new_name) {

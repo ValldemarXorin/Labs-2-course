@@ -38,6 +38,7 @@ public:
 
 	void push_back(const string& value) {
 		auto new_node = std::make_shared<Node>();
+		new_node->film->set_name(value);
 		if (is_empty()) {
 			first = new_node;
 			last = new_node;

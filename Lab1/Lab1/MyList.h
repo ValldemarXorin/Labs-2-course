@@ -12,9 +12,11 @@ using std::string;
 class MyList {
 private:
 	struct Node {
-		std::shared_ptr <Film> film;
+		std::shared_ptr <Film> film = std::make_shared<Film>();
 		std::shared_ptr <Node> next = nullptr;
-		explicit Node(const string& new_value) : film(new Film(new_value)) {}
+		explicit Node(const string& new_value) {
+			film->set_name(new_value);
+		}
 	};
 	std::shared_ptr <Node> first = nullptr;
 	std::shared_ptr <Node> last = nullptr;

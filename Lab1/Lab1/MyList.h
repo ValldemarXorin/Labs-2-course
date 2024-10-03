@@ -14,7 +14,9 @@ private:
 	struct Node {
 		std::shared_ptr <Film> film = std::make_shared<Film>();
 		std::shared_ptr <Node> next = nullptr;
+
 		Node() = default;
+
 		explicit Node(const string& new_value) {
 			film->set_name(new_value);
 		}

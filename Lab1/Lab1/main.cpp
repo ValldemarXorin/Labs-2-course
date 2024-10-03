@@ -36,6 +36,7 @@ int main() {
 		}
 		cout << "Do you want continue? If yes, enter 1, else 0" << endl;
 		cin >> exit;
+		system("cls");
 	}
 	return 0;
 }

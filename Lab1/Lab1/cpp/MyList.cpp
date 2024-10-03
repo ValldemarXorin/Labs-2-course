@@ -1,4 +1,4 @@
-#include ".\h\MyList.h"
+#include "MyList.h"
 
 bool MyList::is_empty() {
 	return first == nullptr;

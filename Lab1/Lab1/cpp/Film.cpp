@@ -1,4 +1,4 @@
-#include "\Work\Lab1\Lab1\Lab1\h\Film.h"
+#include ".\h\Film.h"
 
 void Film::set_name(std::string_view new_name) {
 	Film::name = new_name;

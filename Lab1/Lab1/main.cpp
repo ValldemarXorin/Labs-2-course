@@ -1,9 +1,8 @@
 #include <iostream>
 #include <string>
-#include "Film.h"
-#include "DatabaseFilms.h"
-#include "MyList.h"
-#include "locale.h"
+#include ".\h\DatabaseFilms.h"
+#include ".\h\Film.h"
+#include ".\h\MyList.h"
 
 using std::cout;
 using std::cin;

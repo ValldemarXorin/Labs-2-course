@@ -1,4 +1,4 @@
-#include "\Work\Lab1\Lab1\Lab1\h\DatabaseFilms.h"
+#include ".\h\DatabaseFilms.h"
 
 void DatabaseFilms::create_film() {
 	DatabaseFilms::cont = true;
